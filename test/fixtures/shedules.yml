@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  event_name: MyString
+  speaker_name: MyString
+  venue_details: MyString
+  purpose_of_conference: MyString
+  price: 9.99
+  category: MyString
+  date_time: 2021-09-11 15:02:25
+
+two:
+  event_name: MyString
+  speaker_name: MyString
+  venue_details: MyString
+  purpose_of_conference: MyString
+  price: 9.99
+  category: MyString
+  date_time: 2021-09-11 15:02:25
