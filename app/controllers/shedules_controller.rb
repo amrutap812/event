@@ -31,9 +31,9 @@ class ShedulesController < ApplicationController
 		end
 	end
 
-
+     
 	def destroy
-		
+	    
 		@shedule.destroy
 		flash[:notice] = "this data deleted successfully"
 
@@ -47,7 +47,7 @@ private
 	end
 
 	def shedule_params
-		params.require(:shedule).permit(:event_name, :speaker_name, :venue_details, :purpose_of_conference, :price, :category, :date_time)
+		params.require(:shedule).permit(:event_name, :avatar ,:speaker_name, :venue_details, :purpose_of_conference, :price, :category, :date_time)
 		 
 	end
 

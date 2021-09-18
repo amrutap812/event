@@ -4,6 +4,11 @@
 
 	<%= f.text_field :event_name %>
 </p>
+<p>
+	<%= f.label :Speaker_image %><br/>
+
+	<%= f.file_field :avatar %>
+</p>
 
 <p>
 	<%= f.label :Speaker_Name %><br/>
@@ -28,11 +33,7 @@
 	<%= f.text_field :category%>
 </p>
 
-  <p>
-    <%= f.label :image_of_event%><br/>
-	<%= f.file_field :avatar %>
-
-  </p>
+  
   <p>
   	<%= f.label :Date_and_time%><br/>
 	<%= f.datetime_field :date_time %>

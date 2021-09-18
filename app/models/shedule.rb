@@ -1,5 +1,5 @@
 class Shedule < ApplicationRecord
-	has_many :user_shedules
+	has_many :user_shedules , dependent: :destroy
 	has_many :users, through: :user_shedules
 	has_one_attached :avatar
 

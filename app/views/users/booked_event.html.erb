@@ -10,7 +10,8 @@
             <th scope="col">Price</th>
             <th scope="col">category of people</th>
             <th scope="col">Date and Time</th>
-            <th scope="col">Actions</th>
+            <th style="width:70px; height:auto;">image of speaker</th>
+            <th scope="col"><br>Actions</th>
           </tr>
         </thead>
       <%  @shedule_event.each do |event| %>
@@ -18,14 +19,15 @@
         <tbody>
           <tr>
             <th scope="row"><%= event.event_name %></th>
-            <td><%= event.speaker_name %></td>
-           <td><%= event.venue_details %></td>
-           <td><%= event.purpose_of_conference %></td>
-           <td><%= event.price %></td>
-           <td><%= event.category %></td>
-          <td><%= event.date_time %></td>
-          <td><%= link_to 'chancel', user_shedule_path(event) ,method: :delete , data: { confirm: "are you sure?"}  %></td>
-             </tr>
+              <td><%= event.speaker_name %></td>
+              <td><%= event.venue_details %></td>
+              <td><%= event.purpose_of_conference %></td>
+              <td><%= event.price %></td>
+              <td><%= event.category %></td>
+              <td><%= event.date_time %></td>
+              <td><%= image_tag(event.avatar, style:'width:150%') %><td>
+              <td><%= link_to 'chancel', user_shedule_path(event) ,method: :delete , data: { confirm: "are you sure?"}  %></td>
+          </tr>
       <% end %>    
         </tbody>
     </table>
