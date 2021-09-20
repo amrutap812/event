@@ -27,8 +27,8 @@
           <td><%= event.date_time %></td>
           <td><%= image_tag(event.avatar, style:'width:100%') %><td>
           <td><% if current_user && current_user.admin %>
-                <%= link_to 'update',edit_shedule_path(event) %>
-                <%= link_to 'Delete', shedule_path(event) ,method: :delete , data: { confirm: "are you sure?"}  %>
+                <%= link_to 'update',edit_shedule_path(event)%>
+                <%= link_to 'Delete', shedule_path(event) ,method: :delete , data: { confirm: "are you sure?"}%>               
               <% else %>
                   <% if current_user.not_shedules_with?(event.id) %>             
                      <%= link_to 'Book', user_shedules_path(user: current_user, id: event.id), class: 'btn btn-xs btn-success', method: :post %>

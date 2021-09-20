@@ -26,7 +26,7 @@
               <td><%= event.category %></td>
               <td><%= event.date_time %></td>
               <td><%= image_tag(event.avatar, style:'width:150%') %><td>
-              <td><%= link_to 'chancel', user_shedule_path(event) ,method: :delete , data: { confirm: "are you sure?"}  %></td>
+              <td><%= link_to 'cancel', user_shedule_path(event) ,method: :delete , data: { confirm: "are you sure?"}  , class: 'btn btn-danger' %></td>
           </tr>
       <% end %>    
         </tbody>

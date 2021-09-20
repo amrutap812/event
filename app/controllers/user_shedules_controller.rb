@@ -19,7 +19,7 @@ class UserShedulesController < ApplicationController
 
 				@user_shedule = UserShedule.where(user_id: current_user.id, shedule_id: event.id).first
 				
-				user_shedule.destroy
+				@user_shedule.destroy
 				flash[:notice] = "#{event.event_name} was successfully cancelled."
 				redirect_to booked_event_path
              
