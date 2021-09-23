@@ -1,0 +1,47 @@
+<h1>List of Events</h1>
+<div class="container">
+  <% if @shedule %>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Event Name</th>
+          <th scope="col">Speaker's Name</th>
+          <th scope="col">Venue Details</th>
+          <th scope="col">Purpose of event</th>
+          <th scope="col">Price</th>
+          <th scope="col">category of people</th>
+          <th scope="col">Date and Time </th>
+           <th scope="col" style="width: 100px;height: auto;">image of speaker</th>
+          <th scope="col">Action </th>
+        </tr>
+      </thead>
+      <%  @shedule.each do |event| %>
+      <tbody>
+        <tr>
+          <th scope="row"><%= event.event_name %></th>
+          <td><%= event.speaker_name %></td>
+          <td><%= event.venue_details %></td>
+          <td><%= event.purpose_of_conference %></td>
+          <td><%= event.price %></td>
+          <td><%= event.category %></td>
+          <td><%= event.date_time %></td>
+          <td><%= image_tag(event.avatar, style:'width:100%') %></td>
+          <td><% if current_user && current_user.admin %>
+                <%= link_to 'update',edit_shedule_path(event)%>
+                <%= link_to 'Delete', shedule_path(event) ,method: :delete , data: { confirm: "are you sure?"}%>               
+              <% else %>
+                  <% if current_user.not_shedules_with?(event.id) %>             
+                     <%= link_to 'Book', user_shedules_path(user: current_user, id: event.id), class: 'btn btn-xs btn-success', method: :post %>
+                  <% else %>
+                      <span class="badge badge-secondary">
+                        you  already booked this Event
+                      </span>
+                  <% end %>
+              <% end %>
+          </td> 
+        </tr>
+      </tbody>
+      <% end %>
+    </table>
+  <% end %>
+</div>

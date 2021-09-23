@@ -1,0 +1,42 @@
+PDF generation date:
+<%= Time.zone.now %>
+
+ <%  @shedule.each do |shedule| %>
+
+<p>
+  <strong>Event ID:</strong>
+  <%= shedule.id %>
+</p>
+
+<p>
+  <strong>Event Name:</strong>
+  <%= shedule.event_name %>
+</p>
+
+<p>
+  <strong>Speaker Name:</strong>
+  <%= shedule.speaker_name  %>
+</p>
+
+
+<p>
+  <strong>Venue Details:</strong>
+  <%= shedule.venue_details  %>
+</p>
+<p>
+  <strong>Purpose of conference:</strong>
+  <%= shedule.purpose_of_conference %>
+</p>
+<p>
+  <strong>Price:</strong>
+  <%= shedule.price  %>
+</p>
+<p>
+  <strong>Category Of People Who Will Get Benifit:</strong>
+  <%= shedule.category  %>
+</p>
+<p>
+  <strong>Date & Time:</strong>
+  <%= shedule.date_time  %>
+</p>
+<% end %>

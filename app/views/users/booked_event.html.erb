@@ -1,0 +1,35 @@
+<h1>Booked Event List</h1>
+   <div class="container">
+    <table class="table">
+       <thead class="thead-dark">
+          <tr>
+            <th scope="col">Event Name</th>
+            <th scope="col">Speaker's Name</th>
+            <th scope="col">Venue Details</th>
+            <th scope="col">Purpose of event</th>
+            <th scope="col">Price</th>
+            <th scope="col">category of people</th>
+            <th scope="col">Date and Time</th>
+            <th scope="col" style="width: 50px;height: auto;">image of speaker</th>
+            <th scope="col"><br>Actions</th>
+          </tr>
+        </thead>
+      <%  @shedule_event.each do |event| %>
+       
+        <tbody>
+          <tr>
+            <th scope="row"><%= event.event_name %></th>
+              <td><%= event.speaker_name %></td>
+              <td><%= event.venue_details %></td>
+              <td><%= event.purpose_of_conference %></td>
+              <td><%= event.price %></td>
+              <td><%= event.category %></td>
+              <td><%= event.date_time %></td> 
+              <td><%= image_tag(event.avatar, style:'width:100%') %></td>
+              <td><%= link_to 'cancel', user_shedule_path(event) ,method: :delete , data: { confirm: "are you sure?"}  , class: 'btn btn-danger' %></td>
+              <td><%= link_to 'Receipt', show_path(id: current_user.id ,format: :pdf)%></td>
+          </tr>
+      <% end %>    
+        </tbody>
+    </table>
+</div>
